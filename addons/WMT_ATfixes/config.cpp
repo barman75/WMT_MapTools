@@ -7,8 +7,8 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] = {"A3_Weapons_F","A3_Weapons_F_NATO","A3_Weapons_F_Launchers_Titan","A3_Soft_F","A3_Boat_F_Boat_Armed_01","A3_Boat_F","A3_Structures_F_Civ_Constructions","A3_Data_F","A3_Weapons_F_Explosives"};
 		authorUrl = "https://github.com/iEzhuk/WMT_MapTools";
-		author = "Zealot and Ezhuk";
-		version = 1.5.1;
+		author = "Zealot and Ezhuk, Українізовано Barman75";
+		version = 1.5.1ua;
 		versionStr = "1.5.1";
 		versionAr[] = {1,5,1};
 	};
