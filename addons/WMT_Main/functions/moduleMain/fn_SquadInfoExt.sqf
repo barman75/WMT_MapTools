@@ -68,7 +68,7 @@ PR(_units) = units group player;
 for "_i" from 0 to (count _units - 1) do {
     _unit = _units select _i;
     _unitname = if (isPlayer _unit) then {name _unit} else {"[AI]"};
-    _unitdesc = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "Displayname");
+    _unitdesc = if (roleDescription _unit == "") then {getText (configFile >> "CfgVehicles" >> typeOf _unit >> "Displayname")} else {roleDescription _unit};
     _wpn = if (primaryWeapon _unit == "") then {""} else {getText (configFile >> "CfgVehicles" >> primaryWeapon _unit >> "Displayname")};
 
     _txt = _txt + format ["%1: <font color='#c7861b'>%2</font> (%3) %4<br/>", _i+1, _unitname, _unitdesc, _wpn];
