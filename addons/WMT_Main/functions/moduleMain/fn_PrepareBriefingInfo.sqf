@@ -76,7 +76,7 @@ private _boxes = []; // ammoboxes to show in "Vehicle inventory" tab only
     _tempData pushback _vehinfo;
 } foreach _boxes;
 
-// данные отряда ["S", [координаты], "GroupID", сторона, число игроков, "имя лидера",[юниты] ]
+// дані отряду ["S", [координати], "GroupID", сторона, число гравців, "ім'я лідера",[клас юніта, ім'я, юніт] ]
 
 {
     if ((leader _x) in playableUnits and (_x getVariable ["wmt_show", true]) ) then {
@@ -88,7 +88,7 @@ private _boxes = []; // ammoboxes to show in "Vehicle inventory" tab only
 
         _units = [];
         {
-            _units pushback [typeOf _x, if(isPlayer _x) then {name _x} else {""}];
+            _units pushback [typeOf _x, if(isPlayer _x) then {name _x} else {""}, _x];
 
         } foreach units _x;
 
