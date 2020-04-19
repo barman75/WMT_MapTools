@@ -125,7 +125,7 @@ private _invVehTxt = "";
 
             _squadTxt = _squadTxt + format ["<font color='#c7861b'><marker name='%2'>%1:</marker></font><br/>", _groupid, _marker];
             {
-                _squadTxt = _squadTxt + getText (configFile >> "CfgVehicles" >> format["%1",(_x select 0)] >> "Displayname")+ ":  " + (_x select 1);
+                _squadTxt = if (roleDescription (_x select 2) == "") then {_squadTxt + getText (configFile >> "CfgVehicles" >> format["%1",(_x select 0)] >> "Displayname")+ ":  " + (_x select 1)} else {_squadTxt + roleDescription (_x select 2)+ ":  " + (_x select 1)};
                 _squadTxt = _squadTxt + "<br/>";
             } foreach _units;
             _squadTxt = _squadTxt + "<br/>";
