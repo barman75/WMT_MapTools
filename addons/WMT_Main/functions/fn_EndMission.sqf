@@ -40,6 +40,8 @@ switch (true) do {
         private _textWinner = if(_isPlayerWin)then{localize "STR_WMT_Win"}else{localize "STR_WMT_Lose"};
         private _config =  (isclass (configFile / "CfgDebriefing" / _text) ||  isclass (missionConfigFile / "CfgDebriefing" / _text));
 
+        {if (isServer) then {[""] call ocap_fnc_exportData;};} remoteExec ["bis_fnc_call", 0, true]; //Закінчення ОСАР
+
         if !(_config) then {
             private _color = if(_isPlayerWin)then{"#057f05"}else{"#7f0505"};//green or red
             [ (format [ "<t size='1.4' color='%1'>%2</t>", _color, _textWinner]), 0, 0.3, 15, 0, 0, 30] spawn bis_fnc_dynamicText;
@@ -60,6 +62,7 @@ switch (true) do {
     };
     case (count _this == 1) : {
         private _text = _this select 0;
+        {if (isServer) then {[""] call ocap_fnc_exportData;};} remoteExec ["bis_fnc_call", 0, true]; //Закінчення ОСАР адміном
         [ (format [ "<t size='1.4' color='#ff9000' shadow=2 >%1</t>", localize "STR_WMT_EndMissionByAdmin"] ), 0, 0.3, 15, 0, 0, 30] spawn bis_fnc_dynamicText;
         [ (format [ "<t size='1.4' color='#ff9000' shadow=2 >%1</t>", _text] ), 0, 0.5, 15, 0, 0, 31] spawn bis_fnc_dynamicText;
         ["end1",false,10] call BIS_fnc_endMission;
