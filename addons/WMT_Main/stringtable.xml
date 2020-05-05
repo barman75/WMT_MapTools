@@ -114,8 +114,8 @@
             </Key>
             <Key ID="STR_WMT_ViewDistanceTerrain">
                 <Original>View distance</Original>
-                <Russian>View distance</Russian>
-                <English>Дальнiсть промальовки ландшафту</English>
+                <English>View distance</English>
+                <Russian>Дальнiсть промальовки ландшафту</Russian>
             </Key>
             <Key ID="STR_WMT_ViewDistanceTerrain_Desc">
                 <Original>Max view terrain distance</Original>
